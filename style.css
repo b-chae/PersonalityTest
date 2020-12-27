@@ -1,0 +1,17 @@
+body{
+    background-color: burlywood;
+    color:white;
+    vertical-align: middle;
+    text-align:center;
+    margin-top:25%;
+    font-size:120%;
+}
+
+h1{
+    font-size:200%;
+}
+
+.mouseenter{
+    color: lightgray;
+    transition: color 0.5s ease-in-out;
+}
