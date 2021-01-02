@@ -1,0 +1,30 @@
+body{
+    background-color: darkslategrey;
+    color:white;
+    vertical-align: middle;
+    text-align:center;
+    margin-top:25%;
+    font-size:120%;
+}
+
+h1{
+    font-size:200%;
+}
+
+.mouseenter{
+    color: lightblue;
+    transition: color 0.3s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity : 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.showing{
+    animation: fadeIn .5s linear;
+}
