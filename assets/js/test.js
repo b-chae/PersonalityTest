@@ -2,6 +2,9 @@ const QuestionText = document.querySelector(".question_text")
 const AnsText1 = document.querySelector(".ans1")
 const AnsText2 = document.querySelector(".ans2")
 const Panel = document.querySelector(".panel")
+const GoResultButton = document.querySelector(".resbutton")
+
+var MBTI = ''
 
 function handleMouseEnter(event) {
     if (!event.target.classList.contains("mouseenter"))
@@ -12,6 +15,17 @@ function handleMouseLeave(event) {
 
     if (event.target.classList.contains("mouseenter"))
         event.target.classList.remove("mouseenter")
+}
+
+function countMBTI(){
+    if(typeCount['E'] > typeCount['I']) MBTI += 'E'
+    else MBTI += 'I'
+    if(typeCount['N'] > typeCount['S']) MBTI += 'N'
+    else MBTI += 'S'
+    if(typeCount['T'] > typeCount['F']) MBTI += 'T'
+    else MBTI += 'F'
+    if(typeCount['J'] > typeCount['P']) MBTI += 'J'
+    else MBTI += 'P'
 }
 
 function handleClick(event) {
@@ -27,7 +41,12 @@ function handleClick(event) {
         ShowQuestion(questionIndex)
     }
     else {
-        // TODO : 결과 페이지로 이동
+        QuestionText.classList.add("hiding")
+        AnsText1.classList.add("hiding")
+        AnsText2.classList.add("hiding")
+        GoResultButton.classList.remove("hiding")
+        countMBTI()
+        GoResultButton.href = "assets/html/result.html?"+MBTI
     }
 }
 
