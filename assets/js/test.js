@@ -6,17 +6,6 @@ const GoResultButton = document.querySelector(".resbutton")
 
 var MBTI = ''
 
-function handleMouseEnter(event) {
-    if (!event.target.classList.contains("mouseenter"))
-        event.target.classList.add("mouseenter")
-}
-
-function handleMouseLeave(event) {
-
-    if (event.target.classList.contains("mouseenter"))
-        event.target.classList.remove("mouseenter")
-}
-
 function countMBTI(){
     if(typeCount['E'] > typeCount['I']) MBTI += 'E'
     else MBTI += 'I'
@@ -46,8 +35,9 @@ function handleClick(event) {
         AnsText2.classList.add("hiding")
         GoResultButton.classList.remove("hiding")
         countMBTI()
-        GoResultButton.href = "assets/html/result.html?"+MBTI
+        GoResultButton.href = "result"
     }
+    window.scrollTo(0,0)
 }
 
 function addShowing() {
@@ -70,14 +60,9 @@ function ShowQuestion(index) {
 
 function init() {
 
-    console.dir(document)
     questionIndex = 0
     ShowQuestion(0)
 
-    AnsText1.addEventListener("mouseenter", handleMouseEnter)
-    AnsText2.addEventListener("mouseenter", handleMouseEnter)
-    AnsText1.addEventListener("mouseleave", handleMouseLeave)
-    AnsText2.addEventListener("mouseleave", handleMouseLeave)
     AnsText1.addEventListener("click", handleClick)
     AnsText2.addEventListener("click", handleClick)
 
