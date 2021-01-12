@@ -3,6 +3,7 @@ const AnsText1 = document.querySelector(".ans1")
 const AnsText2 = document.querySelector(".ans2")
 const Panel = document.querySelector(".panel")
 const GoResultButton = document.querySelector(".resbutton")
+const MyPage = document.querySelector(".mypage")
 
 var MBTI = ''
 
@@ -35,7 +36,7 @@ function handleClick(event) {
         AnsText2.classList.add("hiding")
         GoResultButton.classList.remove("hiding")
         countMBTI()
-        GoResultButton.href = "result"
+        GoResultButton.href = "result/" + MBTI
     }
     window.scrollTo(0,0)
 }
@@ -56,6 +57,7 @@ function ShowQuestion(index) {
     QuestionText.innerText = QuestionList[index]
     AnsText1.innerText = "- " + Ans1List[index].ans
     AnsText2.innerText = "- " + Ans2List[index].ans
+    MyPage.innerText = (index+1) + "/16"
 }
 
 function init() {
