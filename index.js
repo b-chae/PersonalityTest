@@ -5,6 +5,7 @@ var http = require('http')
 
 app.use('/JS_PATH', express.static(__dirname + '/assets/js'))
 app.use('/CSS_PATH', express.static(__dirname + '/assets/css'))
+app.use('/STATIC_PATH', express.static(__dirname + '/static'));
 eval(fs.readFileSync('assets/js/RList.js', 'utf-8'));
 
 var server = app.listen(8000, function(){
@@ -28,9 +29,9 @@ app.get('/result/:id', function(req, res){
 app.get('/finalResult', function(req, res){
     fs.readFile('assets/html/result.html', function(error, data){
         res.writeHead(200, {'Content-Type': 'text/html'})
-        res.write('<h2>' + R[myMBTI].b + '</h2>')
-        res.write('<h5>' + R[myMBTI].w + '</h5>')
-        res.write('<h4>' + R[myMBTI].e + '</h4>')
+        res.write('<div class="text-4xl mb-5 mx-5">' + R[myMBTI].b + '</div>')
+        res.write('<div class="text-xl underline mb-12 mx-5">' + R[myMBTI].w + '</div>')
+        res.write('<div class="text-2xl mx-5 whitespace-wrap">' + R[myMBTI].e + '</div>')
         res.end(data)
     })
 })

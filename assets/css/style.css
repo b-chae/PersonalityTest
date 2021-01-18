@@ -5,6 +5,7 @@ body {
   text-align: center;
   margin-top: 8%;
   font-size: 180%;
+  word-break: keep-all;
 }
 
 h1 {

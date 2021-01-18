@@ -55,9 +55,9 @@ function ShowQuestion(index) {
     addShowing()
     setTimeout(removeShowing, 500)
     QuestionText.innerText = QuestionList[index]
-    AnsText1.innerText = "- " + Ans1List[index].ans
-    AnsText2.innerText = "- " + Ans2List[index].ans
-    MyPage.innerText = (index+1) + "/16"
+    AnsText1.innerText = Ans1List[index].ans
+    AnsText2.innerText = Ans2List[index].ans
+    MyPage.innerText = (index+1) + "/12"
 }
 
 function init() {
