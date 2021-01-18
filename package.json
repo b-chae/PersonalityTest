@@ -4,7 +4,8 @@
   "description": "- [x] 1/2 질문 12개 추가하기 - [ ] 프로그레스 바 만들기 - [ ] 완료 화면 만들기 - [ ] 시작 화면 만들기 - 보러가기 -> https://b-chae.github.io/WhatsMyBubbleTea/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "gulp"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,14 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.1",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "tailwindcss": "^2.0.2"
   }
 }
